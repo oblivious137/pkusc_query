@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>成绩</title>
+</head>
+
+<body>
+	<table>
+	<tr>
+	{% for i in range(0, col_num) %}
+	<th>排名</th>
+	<th>姓名</th>
+	<th>过题数</th>
+	<th>已解决</th>
+	<th>未解决</th>
+	{% end %}
+	</tr>
+	
+	{% for raw in data %}
+		<tr>
+		{% for player in raw %}
+		<td>{{player['rank']}}</td>
+		<td>{{player['name']}}</td>
+		<td>{{player['num']}}</td>
+		<td>{{player['solved']}}</td>
+		<td>{{player['solving']}}</td>
+		{% end %}
+		</tr>
+	{% end %}
+	</table>
+</body>
+</html>
